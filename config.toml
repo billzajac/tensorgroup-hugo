@@ -1,0 +1,33 @@
+baseurl = "https://tensor.group"
+defaultContentLanguage = "en"
+disableRSS = true
+enableRobotsTXT = true
+languageCode = "en-us"
+theme = "dimension"
+title = "Tensor Group"
+[languages.en]
+googleAnalytics = "UA-93894001-1"
+languageName = "English"
+title = "Tensor Group"
+weight = 1
+[params]
+copyright = "Tensor Group"
+description = "Helping you achieve your highest business and personal value through skilled consulting."
+logo = "fa-diamond"
+title = "Tensor Group"
+[[params.social]]
+icon = "twitter"
+link = "#"
+medium = "twitter"
+[[params.social]]
+icon = "facebook"
+link = "#"
+medium = "facebook"
+[[params.social]]
+icon = "instagram"
+link = "#"
+medium = "instagram"
+[[params.social]]
+icon = "github"
+link = "#"
+medium = "github"
