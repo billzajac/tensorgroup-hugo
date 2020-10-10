@@ -15,6 +15,5 @@ Tensor Group can help you:
 * Define and build your technology needs in the Cloud
 * Maintain a pragmatic focus on innovation and emerging technology, such as:
   * Machine Learning
-  * Blockchain
   * Cloud
 * Achieve a higher state of personal Well-Being
