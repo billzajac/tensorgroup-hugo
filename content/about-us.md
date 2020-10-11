@@ -12,8 +12,10 @@ A <i>tensor</i> is a geometric value that describes all of the forces on an ent
 
 Tensor Group can help you:
 
-* Define and build your technology needs in the Cloud
-* Maintain a pragmatic focus on innovation and emerging technology, such as:
-  * Machine Learning
+* Maintain a pragmatic focus on innovation and emerging technology, such as
+  * AR/XR
+  * IoT
+  * Prototyping
   * Cloud
-* Achieve a higher state of personal Well-Being
+* Define and build your technology needs in the Cloud
+* Achieve a higher state of personal well-being
