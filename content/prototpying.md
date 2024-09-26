@@ -2,7 +2,7 @@
 date = "2017-03-15T16:42:19-07:00"
 title = "Prototyping"
 type = "page"
-weight = 10
+weight = 20
 
 +++
 {{< figure class="image main" src="/images/marina-vitale-206978-960-320.jpg" >}}
@@ -10,5 +10,5 @@ weight = 10
 Tensor Group can help with your rapid and practical prototyping needs
 
 * Testing or understanding a new product idea
-* Integration
-* Feedback from customers
+* Rapid iteration with feedback from customers
+* Integration with existing products and processes

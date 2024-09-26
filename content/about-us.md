@@ -3,7 +3,7 @@ date = "2017-03-16T13:38:14Z"
 menuname = "About"
 title = "About Us"
 type = "page"
-weight = 25
+weight = 50
 
 +++
 {{< figure class="image main" src="/images/rawpixel-com-211022-960-320.jpg" >}}
@@ -13,9 +13,10 @@ A <i>tensor</i> is a geometric value that describes all of the forces on an ent
 Tensor Group can help you:
 
 * Maintain a pragmatic focus on innovation and emerging technology, such as
-  * AR/XR
+  * AI/ML
+  * AR/VR/xR
   * IoT
   * Prototyping
   * Cloud
-* Define and build your technology needs in the Cloud
+* Define and build your technology needs
 * Achieve a higher state of personal well-being
