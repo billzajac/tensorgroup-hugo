@@ -14,5 +14,5 @@ copyright = "Tensor Group"
 description = "Helping you achieve your highest business and personal value through skilled consulting."
 #logo = "fa-diamond"
 # logoimage in /static at least 86*86 pixels
-logoimage = "/images/tg-white-logo-only.png"
+logoimage = "/images/tg-white-orange-logo-only.png"
 title = "Tensor Group"
