@@ -856,10 +856,10 @@ button {
   -webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
   -ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
   transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
-  background-image: -moz-radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%);
-  background-image: -webkit-radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%);
-  background-image: -ms-radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%);
-  background-image: radial-gradient(rgba(0, 0, 0, 0.25) 25%, transparent 55%);
+  background-image: -moz-radial-gradient(rgba(0, 0, 0, 0.25) 85%, transparent 15%);
+  background-image: -webkit-radial-gradient(rgba(0, 0, 0, 0.25) 85%, transparent 15%);
+  background-image: -ms-radial-gradient(rgba(0, 0, 0, 0.25) 85%, transparent 15%);
+  background-image: radial-gradient(rgba(0, 0, 0, 0.25) 85%, transparent 15%);
   max-width: 100%;
   text-align: center; }
   #header > * {
@@ -942,7 +942,7 @@ button {
         font-size: 0.8rem;
         border-bottom: 0; }
         #header nav ul li a:hover {
-          background-color: rgba(255, 255, 255, 0.075); }
+          background-color: rgba(255, 255, 255, 0.475); } /* menu items */
         #header nav ul li a:active {
           background-color: rgba(255, 255, 255, 0.175); }
   #header nav.use-middle:after {
