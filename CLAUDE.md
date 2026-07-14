@@ -45,11 +45,12 @@ Pages: Edit*). Set the token with `gh secret set CLOUDFLARE_API_TOKEN`.
 **Manual: `./deploy.sh`** — from your machine after a one-time `wrangler login`. Copies the
 static files to a temp dir and runs `wrangler pages deploy … --project-name=tensorgroup-hugo`.
 
-The Pages project is also git-connected with a stale `hugo` build command, so a raw
-`git push` triggers a *native* Pages build that fails harmlessly (a failed build never
-replaces production). To silence it, clear that build command in the dashboard
-(Settings → Builds & deployments → Build command **empty**, Output dir **/**), or disconnect
-the git integration and rely on the Action/`deploy.sh`.
+Cloudflare's **automatic git deployments are disabled** for this project
+(`deployments_enabled=false`), so a raw `git push` no longer triggers the old failing
+`hugo` build. Deploys happen **only** through the GitHub Action or `./deploy.sh`.
+Cloudflare **Web Analytics** stays enabled on the project. To go back to native git builds,
+re-enable deployments in the dashboard (Settings → Builds & deployments) **and** clear the
+`hugo` build command / point the output dir at the site root.
 
 The site is **not on Netlify** despite the old badge; there is no `netlify.toml`.
 
