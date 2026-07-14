@@ -33,23 +33,25 @@ links like `/styles.css`.)
 
 ## Deploy
 
-Hosted on **Cloudflare Pages** (project connected to `billzajac/tensorgroup-site`),
-custom domain https://tensor.group.
+Hosted on **Cloudflare Pages** — project `tensorgroup-hugo` (name predates the repo
+rename; the `*.pages.dev` name is cosmetic), custom domain https://tensor.group.
+This is a **no-build static site** (no Hugo, no build step).
 
-This is a **no-build static site**: the Pages build command must be **empty** and the build
-output directory `/` (root). There is no repo file that overrides the Pages build command
-(unlike Netlify's `netlify.toml`) — it lives in the dashboard.
+**Primary: GitHub Action** — `.github/workflows/deploy.yml` runs on every push to `main`,
+assembles the site files, and deploys via wrangler. Needs two repo secrets:
+`CLOUDFLARE_ACCOUNT_ID` (set) and `CLOUDFLARE_API_TOKEN` (a token with *Cloudflare
+Pages: Edit*). Set the token with `gh secret set CLOUDFLARE_API_TOKEN`.
 
-- **Fix a failing "hugo" build:** Cloudflare dashboard → Workers & Pages → the project →
-  Settings → Builds & deployments → Build configuration → Framework preset **None**, Build
-  command **empty**, Output directory **/**. Then retry the deployment.
-- **Deploy from the CLI (wrangler, direct upload):**
-  ```bash
-  wrangler login                      # one-time browser auth
-  wrangler pages project list         # find the project name
-  wrangler pages deploy . --project-name=<name> --branch=main
-  ```
-- The site is **not on Netlify** despite the old README badge; there is no `netlify.toml`.
+**Manual: `./deploy.sh`** — from your machine after a one-time `wrangler login`. Copies the
+static files to a temp dir and runs `wrangler pages deploy … --project-name=tensorgroup-hugo`.
+
+The Pages project is also git-connected with a stale `hugo` build command, so a raw
+`git push` triggers a *native* Pages build that fails harmlessly (a failed build never
+replaces production). To silence it, clear that build command in the dashboard
+(Settings → Builds & deployments → Build command **empty**, Output dir **/**), or disconnect
+the git integration and rely on the Action/`deploy.sh`.
+
+The site is **not on Netlify** despite the old badge; there is no `netlify.toml`.
 
 ## Brand tokens
 

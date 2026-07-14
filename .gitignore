@@ -5,3 +5,6 @@ public/
 # archived hugo build artifacts
 _hugo-archive/public/
 _hugo-archive/.hugo_build.lock
+
+# CI deploy staging dir
+_site/

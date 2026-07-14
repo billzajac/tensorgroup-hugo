@@ -1,0 +1,41 @@
+name: Deploy to Cloudflare Pages
+
+# Push to main -> assemble the static site and deploy it to Cloudflare Pages
+# via wrangler. No Hugo, no build step.
+#
+# Requires two repo secrets:
+#   CLOUDFLARE_API_TOKEN  - a token with the "Cloudflare Pages: Edit" permission
+#   CLOUDFLARE_ACCOUNT_ID - the Tensor Group account id
+# Until CLOUDFLARE_API_TOKEN is set, the deploy step is skipped (not failed).
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assemble site (exclude archive/docs)
+        run: |
+          mkdir -p _site
+          cp index.html styles.css main.js _site/
+          cp -r assets _site/assets
+
+      - name: Deploy to Cloudflare Pages
+        if: env.CF_TOKEN != ''
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy _site --project-name=tensorgroup-hugo --branch=main
+
+      - name: Note if token missing
+        if: env.CF_TOKEN == ''
+        run: echo "::warning::CLOUDFLARE_API_TOKEN not set — skipping deploy. Add it with 'gh secret set CLOUDFLARE_API_TOKEN'."
