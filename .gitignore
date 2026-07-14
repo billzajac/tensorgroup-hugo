@@ -8,3 +8,6 @@ _hugo-archive/.hugo_build.lock
 
 # CI deploy staging dir
 _site/
+
+# wrangler local cache
+.wrangler/
