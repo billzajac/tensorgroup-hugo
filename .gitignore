@@ -1,3 +1,7 @@
 .hugo_build.lock
 public/
 .DS_Store
+
+# archived hugo build artifacts
+_hugo-archive/public/
+_hugo-archive/.hugo_build.lock
