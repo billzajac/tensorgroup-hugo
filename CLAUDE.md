@@ -33,13 +33,23 @@ links like `/styles.css`.)
 
 ## Deploy
 
-Push to GitHub → Netlify auto-deploys. **Nothing else to run.**
+Hosted on **Cloudflare Pages** (project connected to `billzajac/tensorgroup-site`),
+custom domain https://tensor.group.
 
-- Repo: `billzajac/tensorgroup-hugo` → Netlify site `sad-volhard-6934d2` → https://tensor.group
-- `netlify.toml` publishes the repo root as-is (`publish = "."`, no build command) and sets
-  security + cache headers. It overrides the Netlify UI build settings.
-- The old build ran Hugo; that is gone. If a deploy ever tries to run Hugo, the stale setting
-  is in the Netlify UI — `netlify.toml` should take precedence, so prefer fixing it there.
+This is a **no-build static site**: the Pages build command must be **empty** and the build
+output directory `/` (root). There is no repo file that overrides the Pages build command
+(unlike Netlify's `netlify.toml`) — it lives in the dashboard.
+
+- **Fix a failing "hugo" build:** Cloudflare dashboard → Workers & Pages → the project →
+  Settings → Builds & deployments → Build configuration → Framework preset **None**, Build
+  command **empty**, Output directory **/**. Then retry the deployment.
+- **Deploy from the CLI (wrangler, direct upload):**
+  ```bash
+  wrangler login                      # one-time browser auth
+  wrangler pages project list         # find the project name
+  wrangler pages deploy . --project-name=<name> --branch=main
+  ```
+- The site is **not on Netlify** despite the old README badge; there is no `netlify.toml`.
 
 ## Brand tokens
 

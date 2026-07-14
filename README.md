@@ -1,10 +1,18 @@
-This is the static site generator content for https://tensor.group
+# tensor.group
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7ea596dd-fd29-4c82-a65a-625061e85597/deploy-status)](https://app.netlify.com/sites/sad-volhard-6934d2/deploys)
+Marketing site for **Tensor Group** — https://tensor.group
 
-Primary Tech
----------------
-* https://gohugo.io/
-* https://app.netlify.com/
-* https://github.com/
-* https://analytics.google.com/
+Hand-built static single page. No framework, no build step, no dependencies.
+See [`CLAUDE.md`](./CLAUDE.md) for stack, local preview, brand tokens, and deploy details.
+
+## Tech
+
+- Static HTML / CSS / vanilla JS (`index.html`, `styles.css`, `main.js`)
+- Hosted on **Cloudflare Pages** (no build command; publishes the repo root)
+- `_hugo-archive/` — the previous Hugo site, archived (do not resurrect)
+
+## Local preview
+
+```bash
+python3 -m http.server 8765   # open http://localhost:8765/
+```
